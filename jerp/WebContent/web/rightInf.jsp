@@ -49,76 +49,74 @@
     }
 %>
 <table width="100%" height="100%" border="0"   cellpadding="0" cellspacing="0" >
-				<%
-                             //每行显示TD个数
-                             int count = 6;
-                             int rows = 1;	//当前行
-                             int cols = 1;		//当前列
-                             //总记录数
-                             int jls = ls.getItems().length;
-                             Rs rslee[] = ls.getItems();
-                             StringBuffer sb0 = new StringBuffer();
-                             StringBuffer sb1 = new StringBuffer();
-                             sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
-                             for (int i = 1; i <= jls; i++) {
-                            	 String image = null;
-                                 if (rslee[i - 1].getFs("pic") == null) {
-                                     image = "";
-                                 } else {
-                                     image = rslee[i - 1].getFs("pic")[0];
-                                 }
-                                 if (i % count == 0) {
-                                     sb1.append("<td width=\"265\"class=\"border11\">" +
-                                             "<table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
-                                             "<tr><td width=\"100\"  class=\"photo1\" onclick=\"myFunction1(this);\">" +
-                                             "<img class=\"photo1\" src='../" + image + "'/>" +
-                                             "</td><td class=\"letterspace\">" +		 
-                                             "<table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" class=\"nav\"> " +	
-                                             "<tr><td><font color='white'>" + rslee[i - 1].get("t0") + "</font></td></tr><tr>" +
-                                             "<td><font color='white'>市场价格：</font><span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t1") + "</span><font color='white'>元 </font></td>" +
-                                             "</tr><tr> <td><font color='white'>兑换积分：</font>" +
-                                             "<span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t2") + "</span><font color='white'>分</font></td>" +
-                                             "</tr></table></td></tr></table></td>");	 
-                                     sb1.append("</tr>");
-                                     sb0.append(sb1);
-                                     sb1 = new StringBuffer();
-                                     sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
-                                     rows++;
-                                     cols=1;
-                                 } else {
-                                	 sb1.append("<td width=\"265\"class=\"border11\">" +
-                                             "<table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
-                                             "<tr><td width=\"100\"  class=\"photo1\" onclick=\"myFunction1(this);\">" +
-                                             "<img class=\"photo1\" src='../" + image + "'/>" +
-                                             "</td><td class=\"letterspace\">" +		 
-                                             "<table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" class=\"nav\"> " +	
-                                             "<tr><td><font color='white'>" + rslee[i - 1].get("t0") + "</font></td></tr><tr>" +
-                                             "<td><font color='white'>市场价格：</font><span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t1") + "</span><font color='white'>元 </font></td>" +
-                                             "</tr><tr> <td><font color='white'>兑换积分：</font>" +
-                                             "<span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t2") + "</span><font color='white'>分</font></td>" +
-                                             "</tr></table></td></tr></table></td>");	 
-                                	 cols++;
-                                 }
-                             }
-                             //补全信息
-                             if(cols != 1){
-                            	 for (int j = 0; j < (count - cols + 1); j++) {
-                                     sb1.append("<td width=\"265\"class=\"border11\">&nbsp;</td>");
-                                 }
-                            	 sb1.append("</tr>");
-                            	 sb0.append(sb1);
-                            	 sb1 = new StringBuffer();
-                            	 rows++;
-                             }
-                             for (int j = 0; j < (count - rows + 1); j++) {
-                                 sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
-                                 for (int x = 0; x < count; x++) {
-                                	 sb1.append("<td class=\"border11\">&nbsp;</td>");
-                                 }
-                                 sb1.append("</tr>");
-                             }
-                        	 sb0.append(sb1);
-                         %>
-  <%=sb0.toString()%>
-		                </table>
+	<%
+              //每行显示TD个数
+              int count = 6;
+              int rows = 1;	//当前行
+              int cols = 1;		//当前列
+              //总记录数
+              int jls = ls.getItems().length;
+              Rs rslee[] = ls.getItems();
+              StringBuffer sb0 = new StringBuffer();
+              StringBuffer sb1 = new StringBuffer();
+              sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
+              for (int i = 1; i <= jls; i++) {
+             	 String image = null;
+                  if (rslee[i - 1].getFs("pic") == null) {
+                      image = "&nbsp;";
+                  } else {
+                      image = "<img class=\"photo1\" src='../" + rslee[i - 1].getFs("pic")[0] + "'/>";
+                  }
+                  if (i % count == 0) {
+                      sb1.append("<td width=\"265\"class=\"border11\">" +
+                              "<table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
+                              "<tr><td width=\"100\"  class=\"photo1\" onclick=\"myFunction1(this);\">" + image +
+                              "</td><td class=\"letterspace\">" +		 
+                              "<table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" class=\"nav\"> " +	
+                              "<tr><td><font color='white'>" + rslee[i - 1].get("t0") + "</font></td></tr><tr>" +
+                              "<td><font color='white'>市场价格：</font><span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t1") + "</span><font color='white'>元 </font></td>" +
+                              "</tr><tr> <td><font color='white'>兑换积分：</font>" +
+                              "<span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t2") + "</span><font color='white'>分</font></td>" +
+                              "</tr></table></td></tr></table></td>");	 
+                      sb1.append("</tr>");
+                      sb0.append(sb1);
+                      sb1 = new StringBuffer();
+                      sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
+                      rows++;
+                      cols=1;
+                  } else {
+                 	 sb1.append("<td width=\"265\"class=\"border11\">" +
+                              "<table width=\"100%\" height=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
+                              "<tr><td width=\"100\"  class=\"photo1\" onclick=\"myFunction1(this);\">" + image +
+                              "</td><td class=\"letterspace\">" +		 
+                              "<table cellspacing=\"0\" border=\"0\" cellpadding=\"0\" class=\"nav\"> " +	
+                              "<tr><td><font color='white'>" + rslee[i - 1].get("t0") + "</font></td></tr><tr>" +
+                              "<td><font color='white'>市场价格：</font><span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t1") + "</span><font color='white'>元 </font></td>" +
+                              "</tr><tr> <td><font color='white'>兑换积分：</font>" +
+                              "<span  class=\"op_digital_base_price\">" + rslee[i - 1].get("t2") + "</span><font color='white'>分</font></td>" +
+                              "</tr></table></td></tr></table></td>");	 
+                 	 cols++;
+                  }
+              }
+              //补全信息
+              if(cols != 1){
+             	 for (int j = 0; j < (count - cols + 1); j++) {
+                      sb1.append("<td width=\"265\"class=\"border11\">&nbsp;</td>");
+                  }
+             	 sb1.append("</tr>");
+             	 sb0.append(sb1);
+             	 sb1 = new StringBuffer();
+             	 rows++;
+              }
+              for (int j = 0; j < (count - rows + 1); j++) {
+                  sb1.append("<tr height=\"160\" style=\"background-image: url(../" + imageRight + ");\">");
+                  for (int x = 0; x < count; x++) {
+                 	 sb1.append("<td class=\"border11\">&nbsp;</td>");
+                  }
+                  sb1.append("</tr>");
+              }
+         	 sb0.append(sb1);
+	%>
+  	<%=sb0.toString()%>
+</table>
 <%-- <%=sb.toString()%> --%>
