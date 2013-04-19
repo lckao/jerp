@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>leeloading...</title>
+<title>loading...</title>
 </head>
 <body>
 	loading......
