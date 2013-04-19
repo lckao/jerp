@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdiy-config xmlns="http://www.jdiy.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.jdiy.net jdiy.xsd">
+	<databases default="def" showSql="true">
+		<database name="def">
+			<type>MYSQL</type>
+			<host>127.0.0.1</host>
+			<port>3306</port>
+			<name>lee</name>
+			<uid>root</uid>
+			<pwd>111222</pwd>
+			<maxPools>32</maxPools>
+			<maxed>ERROR</maxed>
+		</database>
+	</databases>
+
+	<jdiy-properties>
+		<keepActive>1</keepActive>
+		<skin>white</skin>
+		<varKeep>session</varKeep>
+		<varExpires>-1</varExpires>
+		<globalUploadLimit>309600</globalUploadLimit>
+		<URIEncoding>utf-8</URIEncoding>
+		<loginPath>/jdiy-admin/</loginPath>
+		<!--JDiy WEB console path -->
+		<devUid>jdiy</devUid>
+		<!--developer username -->
+		<devPwd>6A92C266145E83FDC2C21292298914DC</devPwd>
+		<!--developer password -->
+		<web.title>JDiy网站管理平台</web.title>
+	</jdiy-properties>
+
+	<user-properties>
+		<prop name="test">test value</prop>
+	</user-properties>
+</jdiy-config>
