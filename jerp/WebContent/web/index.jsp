@@ -18,36 +18,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="css/css.css" />
 <script type="text/javascript" src="js/JSer.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script language="JavaScript" src="js/javascipt.js"></script>
-<script type="text/javascript">
-	__refreshLeft(1);
-	__refreshRight("",1);
-	
-	function __refreshLeft(page) {
-        JSer.url("leftInf.jsp").set("page", page).ajax({
-            method:"post",
-            success:function (d) {
-                JSer("#leftDIV").html(d);
-            }
-        });
-    }
-	
-	function __refreshRight(id,page) {
-        JSer.url("rightInf.jsp").set("id", id).set("page", page).ajax({
-            method:"post",
-            success:function (d) {
-                JSer("#rightDIV").html(d);
-            }
-        });
-    }
-</script>
 </head>
 <body leftmargin="0" topmargin="0" >
-<table width="1920" height="1080" border="0" cellpadding="0" cellspacing="0" >
-    <tr height="120">
+<table width="1920px" height="1080px" border="0" cellpadding="0" cellspacing="0" >
+    <tr height="120px">
 	   <td>
-		 <table border="0"  width="100%" height="100%" cellpadding="0"  cellspacing="0">
+		 <table width="100%" height="100%" border="0"  cellpadding="0"  cellspacing="0">
 		    <tr>
 		        <td class="border1">
 		            <img  class="photo3" src="img/Top.png" />	

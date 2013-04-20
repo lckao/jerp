@@ -1,9 +1,38 @@
-function myFunction(element) {
-	var color = $(element).css("background-color");
-	$("#color10").css("background-color", color);
-	$("#color11").css("background-color", color);
-	$("#color12").css("background-color", color);
-	$("#color13").css("background-color", color);
-	$("#color14").css("background-color", color);
-	$("#color15").css("background-color", color);
+__refreshLeft(1);
+__refreshRight("",1);
+
+function __refreshLeft(page) {
+    JSer.url("leftInf.jsp").set("page", page).ajax({
+        method:"post",
+        success:function (d) {
+            JSer("#leftDIV").html(d);
+        }
+    });
+}
+
+function __refreshRight(id,page) {
+    JSer.url("rightInf.jsp").set("id", id).set("page", page).ajax({
+        method:"post",
+        success:function (d) {
+            JSer("#rightDIV").html(d);
+        }
+    });
+}
+
+function __refreshContent(id) {
+    JSer.url("contentInf.jsp").set("id", id).ajax({
+        method:"post",
+        success:function (d) {
+            JSer("#rightDIV").html(d);
+        }
+    });
+}
+
+function leftFunction(element){
+	__refreshLeft(1);
+    __refreshRight(JSer(element).attr("id"),1);
+}
+
+function rightFunction(element){
+	__refreshContent(JSer(element).attr("id"));
 }

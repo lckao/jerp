@@ -93,19 +93,19 @@ a {
 	border-bottom: solid 0 #ffffff;
 	border-top: solid 0 #ffffff;
 	border-left: solid 0 #ffffff;
-	border-right: solid 5 #ffffff;
+	border-right: solid 5px #ffffff;
 }
 
 .border2 {
-	border-bottom: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
 	border-top: solid 0 #ffffff;
 	border-left: solid 0 #ffffff;
 	border-right: solid 0 #ffffff;
 }
 
 .border3 {
-	border-bottom: solid 5 #ffffff;
-	border-top: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
+	border-top: solid 5px #ffffff;
 	border-left: solid 0 #ffffff;
 	border-right: solid 0 #ffffff;
 }
@@ -114,57 +114,57 @@ a {
 	border-bottom: solid 0 #ffffff;
 	border-top: solid 0 #ffffff;
 	border-left: solid 0 #ffffff;
-	border-right: solid 5 #ffffff;
+	border-right: solid 5px #ffffff;
 }
 
 .border5 {
-	border-bottom: solid 5 #ffffff;
-	border-top: solid 5 #ffffff;
-	border-left: solid 5 #ffffff;
-	border-right: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
+	border-top: solid 5px #ffffff;
+	border-left: solid 5px #ffffff;
+	border-right: solid 5px #ffffff;
 	border-color: red;
 }
 
 .border6 {
-	border-bottom: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
 	border-top: solid 0 #ffffff;
 	border-left: solid 0 #ffffff;
-	border-right: solid 5 #ffffff;
+	border-right: solid 5px #ffffff;
 }
 
 .border7 {
-	border-bottom: solid 5 #ffffff;
-	border-top: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
+	border-top: solid 5px #ffffff;
 	border-left: solid 0 #ffffff;
-	border-right: solid 5 #ffffff;
+	border-right: solid 5px #ffffff;
 }
 
 .border8 {
-	border-bottom: solid 5 #ffffff;
+	border-bottom: solid 5px #ffffff;
 	border-top: solid 0 #ffffff;
-	border-left: solid 5 #ffffff;
+	border-left: solid 5px #ffffff;
 	border-right: solid 0 #ffffff;
 }
 
 .border9 {
 	border-bottom: solid 0 #ffffff;
 	border-top: solid 0 #ffffff;
-	border-left: solid 5 #ffffff;
+	border-left: solid 5px #ffffff;
 	border-right: solid 0 #ffffff;
 }
 
 .border10 {
 	border-bottom: solid 0 #ffffff;
-	border-top: solid 5 #ffffff;
+	border-top: solid 5px #ffffff;
 	border-left: solid 0 #ffffff;
 	border-right: solid 0 #ffffff;
 }
 
 .border11 {
-	border-bottom: solid 0 #ffffff;
-	border-top: solid 5 #ffffff;
-	border-left: solid 5 #ffffff;
-	border-right: solid 0 #ffffff;
+	border-bottom: solid 0px #ffffff;
+	border-top: solid 5px #ffffff;
+	border-left: solid 5px #ffffff;
+	border-right: solid 0px #ffffff;
 }
 
 .container {

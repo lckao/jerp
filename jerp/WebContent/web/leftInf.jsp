@@ -29,11 +29,11 @@
         }
     }
 %>
-<table width="300" height="100%" border="0" cellpadding="0" cellspacing="0">
+<table width="300px" height="100%" border="0" cellpadding="0" cellspacing="0">
 	<%
 		for (Rs item : ls.getItems()) {
 	%>
-	<tr id="<%=item.get("t1")%>" height="160" onclick="myFunction(this)">
+	<tr id="<%=item.get("id")%>" height="160px" onclick="parent.leftFunction(this);">
 		<td class="border10">
 			<%
 				if (item.getFs("pic") != null) {
@@ -42,7 +42,7 @@
 			<%
 			 	} else {
 			%>
-				&nbsp;
+				<img class="photo" src="img/BG1.png" /><!-- 默认图片 -->
 			<%
 			 	}
 			%>
