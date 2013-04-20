@@ -24,8 +24,8 @@
 			                                             <td>
 														      <p><B>　　Apple iphone 16G</B><p>
 													          <p><B>　　iphone 16G 超强性价比</B><p>
-													          <p><B>　　市场价格：</B><span  class="op_digital_base_price">￥4750</span><B>元 </B><p>
-														      <p><B>　　兑换积分：</B><span  class="op_digital_base_price">￥4750</span><B>分</B><p>
+													          <p><B>　　市场价格：</B><span  class="op_digital_base_price1">￥4750</span><B>元 </B><p>
+														      <p><B>　　兑换积分：</B><span  class="op_digital_base_price1">￥4750</span><B>分</B><p>
 														 </td>
 			                                        </tr> 
 			                                    </table>
@@ -33,37 +33,15 @@
 		                                </tr>    
 							            <tr>
 		                                    <td>  
-		                                     <div id="demo" style="overflow:hidden;width:670px;color:#ffffff;">
-      <table cellpadding="0" cellspacing="0" border="0">
-        <tr><td id="demo1" valign="top" align="center">
-          <table cellpadding="2" cellspacing="0" border="0">
-            <tr align="center">
-     <td><img src="img/2.jpg" width="600"></td>
-              <td><img src="img/3.jpg" width="600"></td>
-     <td><img src="img/4.jpg" width="600"></td>
-     <td><img src="img/5.jpg" width="600"></td>
-              <td><img src="img/6.jpg" width="600"></td>
-            </tr>
-          </table>
-        </td>
-        <td id="demo2" valign="top"></td>
-        </tr>
-      </table>
-    </div>
-  <script>
-  var speed=1
-  demo2.innerHTML=demo1.innerHTML
-  function Marquee(){
-  if(demo2.offsetWidth-demo.scrollLeft<=0)
-  demo.scrollLeft-=demo1.offsetWidth
-  else{
-  demo.scrollLeft++
-  }
-  }
-  var MyMar=setInterval(Marquee,speed)
-  demo.onmouseover=function() {clearInterval(MyMar)}
-  demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
-  </script> 
+<div id="fade_focus">
+<div class="loading"></div>
+<ul style="display:none">
+<li><a href="/" target="_blank"><img src="img/2.jpg"  width="600" height="600" /></a></li>
+<li><a href="/" target="_blank"><img src=" img/3.jpg"  width="600" height="600"  /></a></li>
+<li><a href="/" target="_blank"><img src=" img/4.jpg"  width="600" height="600"  /></a></li>
+<li><a href="/" target="_blank"><img src="img/5.jpg"   width="600" height="600" /></a></li>
+</ul>
+</div>
 		                                    </td> 
 		                                </tr> 
                                     </table>								
