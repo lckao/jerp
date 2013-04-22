@@ -29,6 +29,7 @@
         }
     }
 %>
+<div style="float: left;">
 <table width="300px" height="100%" border="0" cellpadding="0" cellspacing="0">
 	<%
 		for (Rs item : ls.getItems()) {
@@ -52,4 +53,5 @@
 		}
 	%>
 </table>
+</div>
 <%-- <%=sb.toString()%> --%>

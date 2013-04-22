@@ -1,23 +1,12 @@
-__refreshLeft(1);
-__refreshRight("", 1);
+__refreshLeft();
+__refreshRight("");
 
-function __refreshLeft(page) {
-	JSer.url("leftInf.jsp").set("page", page).ajax({
+function __refreshLeft() {
+	JSer.url("leftInf1.jsp").ajax({
 		method : "post",
 		success : function(d) {
 			JSer("#leftDIV").html(d);
-		}
-	});
-}
-
-function __refreshRight(id, page) {
-	JSer.url("rightInf.jsp").set("id", id).set("page", page).ajax({
-		method : "post",
-		success : function(d) {
-			JSer("#rightDIV").html(d);
-			
-			
-			$('#magazine').turn({
+			$('#leftDIV').turn({
 				display: 'single',
 				acceleration: true,
 				gradients: !$.isTouch,
@@ -27,12 +16,29 @@ function __refreshRight(id, page) {
 					}
 				}
 			});
-			
-			
 		}
 	});
 }
 
+function __refreshRight(id) {
+	JSer.url("rightInf1.jsp").set("id", id).ajax({
+		method : "post",
+		success : function(d) {
+			JSer("#rightDIV").html(d);
+			$('#rightDIV').turn({
+				display: 'single',
+				acceleration: true,
+				gradients: !$.isTouch,
+				elevation:50,
+				when: {
+					turned: function(e, page) {
+					}
+				}
+			});
+		}
+	});
+}
+/*
 function __refreshContent(id) {
 	JSer.url("contentInf.jsp").set("id", id).ajax({
 		method : "post",
@@ -41,13 +47,13 @@ function __refreshContent(id) {
 			fade();
 		}
 	});
-}
+}*/
 
 function leftFunction(element) {
-	__refreshLeft(1);
-	__refreshRight(JSer(element).attr("id"), 1);
+	__refreshRight(JSer(element).attr("id"));
 }
 
+/*
 function rightFunction(element) {
 	__refreshContent(JSer(element).attr("id"));
 }
@@ -175,4 +181,4 @@ var fade = function() {
 		}
 	};
 	fadeon();
-}
+}*/

@@ -48,7 +48,12 @@
         }
     }
 %>
-<table width="100%" height="100%" border="0"   cellpadding="0" cellspacing="0" >
+<div id="magazine" style="float: left;">
+<%
+	for(int l = 0; l < 3; l++){
+%>
+<div>
+<table border="0"   cellpadding="0" cellspacing="0" >
 	<%
               //每行显示TD个数
               int count = 6;
@@ -122,4 +127,9 @@
 	%>
   	<%=sb0.toString()%>
 </table>
+</div>
+<%
+	}
+%>
+</div>
 <%-- <%=sb.toString()%> --%>
