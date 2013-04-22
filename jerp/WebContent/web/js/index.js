@@ -6,17 +6,7 @@ function __refreshLeft() {
 		method : "post",
 		success : function(d) {
 			JSer("#leftDIV").html(d);
-			$('#leftDIV').turn({
-				display: 'single',
-				acceleration: true,
-				gradients: !$.isTouch,
-				elevation:50,
-				when: {
-					turned: function(e, page) {
-					}
-				}
-			});
-			$('ul.promptu-menu').promptumenu({width:300, height:960, rows: 1, columns: 1, direction: 'horizontal', pages: true});	
+			$('ul.promptu-menu').promptumenu({width:300, height:960, rows: 1, columns: 1, direction: 'vertical', pages: true});	
 		}
 	});
 }
@@ -26,17 +16,7 @@ function __refreshRight(id) {
 		method : "post",
 		success : function(d) {
 			JSer("#rightDIV").html(d);
-			$('#rightDIV').turn({
-				display: 'single',
-				acceleration: true,
-				gradients: !$.isTouch,
-				elevation:50,
-				when: {
-					turned: function(e, page) {
-					}
-				}
-			});
-			$('ul.promptu-menu2').promptumenu({width:1620, height:960, rows: 1, columns: 1, direction: 'horizontal', pages: true});	
+			$('ul.promptu-menu2').promptumenu({width:1620, height:960, rows: 1, columns: 1, direction: 'vertical', pages: true});	
 		}
 	});
 }

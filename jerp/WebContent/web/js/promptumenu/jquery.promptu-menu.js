@@ -201,9 +201,14 @@
 			
 			//and append the navigation buttons for each page
 			if(cells.pages > 1 && settings.pages == true && settings.showPage == true){
-				var page_links = '<a class="active">Page 1</a>';
+				/*var page_links = '<a class="active">Page 1</a>';
 				for(i = 2; i <= cells.pages; i++){
 					page_links = page_links + '<a>Page ' + i + '</a>';
+				}*/
+				//隐藏Page
+				var page_links = '<a class="active"></a>';
+				for(i = 2; i <= cells.pages; i++){
+					page_links = page_links + '<a></a>';
 				}
 				
 				$this.parent('div.promptumenu_window').append('<div class="promptumenu_nav">' + page_links + '</div>');
