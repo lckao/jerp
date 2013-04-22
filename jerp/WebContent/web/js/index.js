@@ -20,22 +20,21 @@ function __refreshRight(id) {
 		}
 	});
 }
-/*
+
 function __refreshContent(id) {
-	JSer.url("contentInf.jsp").set("id", id).ajax({
+	JSer.url("contentInf1.jsp").set("id", id).ajax({
 		method : "post",
 		success : function(d) {
 			JSer("#rightDIV").html(d);
 			fade();
 		}
 	});
-}*/
+}
 
 function leftFunction(element) {
 	__refreshRight(JSer(element).attr("id"));
 }
 
-/*
 function rightFunction(element) {
 	__refreshContent(JSer(element).attr("id"));
 }
@@ -163,4 +162,4 @@ var fade = function() {
 		}
 	};
 	fadeon();
-}*/
+}
