@@ -52,7 +52,7 @@
 			image = "img/1.jpg";		//默认图片
 		}
 	     if (i % count == 0) {
-	    	 sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;clear: right;\">");	 
+	    	 sb2.append("<div style=\"width: 270px;height: 160px;float: left;clear: right;\">");	 
 	    	 sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 	    	 sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
 	    	 sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\">");	 
@@ -69,7 +69,7 @@
 	    	 rows++;
              cols=1;
 	     } else {
-	    	 sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;\">");	 
+	    	 sb2.append("<div style=\"width: 270px;height: 160px;float: left;\">");	 
 	    	 sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 	    	 sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
 	    	 sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\">");	 
@@ -103,13 +103,13 @@
         if(cols != 1){
        	 for (int j = 0; j < (count - cols + 1); j++) {
        		 if(j == count - cols){
-       			sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;clear: right;\">");	 
+       			sb2.append("<div style=\"width: 270px;height: 160px;float: left;clear: right;\">");	 
 				sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 				sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
 				sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\"></div>");		 
 				sb2.append("</div>");	
        		 } else {
-       			sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;\">");	 
+       			sb2.append("<div style=\"width: 270px;height: 160px;float: left;\">");	 
 				sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 				sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
 				sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\"></div>");		 
@@ -126,13 +126,13 @@
         	sb2 = new StringBuffer();
         	for (int l = 0; l < count; l++) {
         		if(l == count - 1){
-           			sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;clear: right;\">");	 
+           			sb2.append("<div style=\"width: 270px;height: 160px;float: left;clear: right;\">");	 
     				sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
     				sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
     				sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\"></div>");		 
     				sb2.append("</div>");	
            		 } else {
-           			sb2.append("<div style=\"width: 270px;height: 160px;background-color: blue;float: left;\">");	 
+           			sb2.append("<div style=\"width: 270px;height: 160px;float: left;\">");	 
     				sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
     				sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
     				sb2.append("<div style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\"></div>");		 

@@ -32,10 +32,10 @@
 			<%@ include file="topInf.jsp" %>
 		</div>
 	</div>
-	<div style="width: 1920px;height: 960px;background-color: yellow;">
-		<div id="leftDIV" style="width: 300px;height: 960px;background-color: green;float: left;">
+	<div style="width: 1920px;height: 960px;">
+		<div id="leftDIV" style="width: 300px;height: 960px;float: left;">
 		</div>
-		<div id ="rightDIV" style="width: 1620px;height: 960px;background-color: blue;float: left;clear: right;">
+		<div id ="rightDIV" style="width: 1620px;height: 960px;float: left;clear: right;">
 		</div>
 	</div>
 </div>
