@@ -42,7 +42,7 @@
 	StringBuffer sb2 = new StringBuffer();
 	
 	boolean check = false;  //判断是否完整
-	sb0.append("<div>");	
+	sb0.append("<li>");	
 	
 	for (int i = 1; i <= jls; i++) {
 		String image = null;
@@ -86,12 +86,12 @@
 	     
 	     if (i % pages == 0) {
 	    	 sb0.append(sb1); 
-	    	 sb0.append("</div>");
+	    	 sb0.append("</li>");
 	    	 sb1 = new StringBuffer();
 	    	 rows = 1;	
 	    	 cols = 1;
 	    	 if(i != jls){
-	    		 sb0.append("<div>");	
+	    		 sb0.append("<li>");	
 	    	 } else {
 	    		 check = true;
 	    	 }
@@ -144,4 +144,6 @@
    	 	sb0.append(sb1);
 	}
 %>
+<ul class="promptu-menu2">
 <%=sb0.toString()%>
+</ul>

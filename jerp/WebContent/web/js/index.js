@@ -16,6 +16,7 @@ function __refreshLeft() {
 					}
 				}
 			});
+			$('ul.promptu-menu').promptumenu({width:300, height:960, rows: 1, columns: 1, direction: 'horizontal', pages: true});	
 		}
 	});
 }
@@ -35,6 +36,7 @@ function __refreshRight(id) {
 					}
 				}
 			});
+			$('ul.promptu-menu2').promptumenu({width:1620, height:960, rows: 1, columns: 1, direction: 'horizontal', pages: true});	
 		}
 	});
 }
