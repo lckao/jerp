@@ -27,7 +27,7 @@
 		}
 	     if (i % count == 0) {
 	    	 sb1.append("<div style=\"width: 300px;height: 5px;background-image:url('img/W.png');\"></div>");	 
-	    	 sb1.append("<div id=" + rslee[i - 1].get("id") + "  onclick=\"parent.leftFunction(this);\" style=\"width: 300px;height: 155px;" + image + "\"></div>");	 
+	    	 sb1.append("<div id=" + rslee[i - 1].get("id") + "  onclick='window.parent.leftFunction(this);' style=\"width: 300px;height: 155px;" + image + "\"></div>");	 
 	         sb1.append("</li>");
 	         sb0.append(sb1);
 	         sb1 = new StringBuffer();
@@ -35,7 +35,7 @@
 	         rows=1;
 	     } else {
 	    	 sb1.append("<div style=\"width: 300px;height: 5px;background-image:url('img/W.png');\"></div>");	 
-	    	 sb1.append("<div id=" + rslee[i - 1].get("id") + "  onclick=\"parent.leftFunction(this);\" style=\"width: 300px;height: 155px;" + image + "\"></div>");	 
+	    	 sb1.append("<div id=" + rslee[i - 1].get("id") + "  onclick='window.parent.leftFunction(this);' style=\"width: 300px;height: 155px;" + image + "\"></div>");	 
 	    	 rows++;
 	     }
 	 }
