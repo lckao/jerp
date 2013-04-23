@@ -41,7 +41,7 @@ function rightFunction(element) {
 
 //渐变
 var fade = function() {
-	var interv = 2000; // 切换间隔时间
+	var interv =3500; // 切换间隔时间
 	var interv2 = 50; // 切换速速
 	var opac1 = 90; // 文字背景的透明度
 	var source = "fade_focus"; // 焦点轮换图片容器的id名称
@@ -112,7 +112,7 @@ var fade = function() {
 	id.appendChild(button);
 	// 渐显
 	var fadeon = function() {
-		opac += 5;
+		opac += 1;
 		div.innerHTML = li[j].innerHTML;
 		span.innerHTML = getTag("img", li[j])[0].alt;
 		alpha(div, opac);
@@ -130,7 +130,7 @@ var fade = function() {
 	}
 	// 渐隐
 	var fadeout = function() {
-		opac -= 5;
+		opac -= 1;
 		div.innerHTML = li[j].innerHTML;
 		alpha(div, opac);
 		if (scton == 0) {

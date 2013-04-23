@@ -10,12 +10,12 @@ Ls ls = dao.ls(args);
 	style="float: left; overflow: hidden; width: 780px; color: #ffffff;">
 	<table cellpadding="0" cellspacing="0" border="0">
 		<tr>
-			<td id="demo1" valign="top" align="center">
+			<td id="demo1" valign="top" >
 				<table cellpadding="2" cellspacing="0" border="0">
-					<tr height=20>
+					<tr height=10>
 						<td></td>
 					</tr>
-					<tr align="center">
+					<tr >
 						<%
 							for (Rs item : ls.getItems()) {
 							String image = null;
@@ -26,16 +26,16 @@ Ls ls = dao.ls(args);
 							}
 						%>
 						<td>
-							<table width="390" cellpadding="0" cellspacing="0" border="0">
-								<tr>
+							<table width="260" cellpadding="0" cellspacing="0" border="1">
+								<tr > 
 									<td><img src="<%=image %>" width="100"></td>
 									<td valign="top">
-										<p>
-											<font color="black"><%=item.get("t0") %></font>
-										</p>
-										<p>
+										
+											<font color="black"align="left"><%=item.get("t0") %></font>
+										
+										
 											<font color="black"><%=item.get("t1") %></font>
-										</p>
+										
 									</td>
 								</tr>
 							</table>

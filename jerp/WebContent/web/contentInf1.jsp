@@ -15,57 +15,44 @@
 	
 	</div>
 	<div style="width: 1620px;height: 955px;">
-		<div  style="width: 5px;height: 955px;float: left;">
-		</div>
-		<div  style="width: 1615px;height: 955px;float: left;clear: right;background-image: url('img/CPBG.png');">
-		   <div  style="width: 650px;height: 955px;float: left;">
-		           <div  style="width: 650px;height:50px;">
-		        
-		          </div>
-		           <div  style="width: 650px;height: 255px;">
+		 <div  style="width: 5px;height: 955px;float: left;">
+		 </div>
+		       <div  style="width: 1615px;height: 955px;float: left;clear: right;background-image: url('img/CPBG.png');">
+		            <div  style="width: 50px;height: 955px; float: left;">
+		            </div>
+		            <div  style="width: 650px;height: 955px;float: left;">
+		                   <div  style="width: 650px;height:50px;">
+		                   </div>
+		                   <div  style="width: 650px;height: 255px;">
 		                       <p><b>　　<%=rs.get("t0") %></b><p>
-													          <p><b>　　<%=rs.get("t3") %></b><p>
-													          <p><b>　　市场价格：</b><%=rs.get("t1") %><b>元 </b><p>
-														      <p><b>　　兑换积分：</b><%=rs.get("t2") %><b>分</b><p>
-		                     
-		                     
-		          </div>
-		          <div  style="width: 650px;height: 650px;">
-		        <div id="fade_focus">
-<div  class="loading"></div>
-<ul style="display:none">
-
-<%
-	for(int i = 0; i < rs.getFs("pic").length; i++){
-%>
-<li><a href="javascript:void" target="_blank"><img src="../<%=rs.getFs("pic")[i] %>"  width="600" height="600" /></a></li>
-<%
-	}
-%>
-</ul>
-</div>
-		           </div>
-		   </div>
-		   <div  style="width: 965px;height: 955px;float: left;">
-		             <div  style="width: 965px;height: 50px;">
-		            
-		
-		              </div>
-		              <div  style="width: 965px;height: 400px;">
-		            <h2><B>简　　介：</B></h2>
-		<%=rs.getX("jj") %>
-		   
-		   
-		   
-		              </div>
-		              <div  style="width: 965px;height: 505px;">
-		            <h2><B>使用说明： </B></h2>
-		<%=rs.getX("sysm") %>
-		   
-		             </div>
-		   
-		   
-		   </div>
-		</div>
-	</div>
+							   <p><b>　　<%=rs.get("t3") %></b><p>
+							   <p><b>　　市场价格：</b><%=rs.get("t1") %><b>元 </b><p>
+							   <p><b>　　兑换积分：</b><%=rs.get("t2") %><b>分</b><p>
+		                    </div>
+		                   <div  style="width: 650px;height: 650px;">
+		                         <div id="fade_focus">
+                                      <div  class="loading">
+                                      </div>
+                                       <ul style="display:none">
+                                       <% for(int i = 0; i < rs.getFs("pic").length; i++){%>
+                                       <li><a href="javascript:void" target="_blank"><img src="../<%=rs.getFs("pic")[i] %>"  width="600" height="600" /></a></li>
+                                       <% }%>
+                                        </ul>
+                                 </div>
+		                    </div>
+		               </div>
+		               <div  style="width: 915px;height: 955px;float: left;">
+		                      <div  style="width: 915px;height: 50px;">
+		                      </div>
+		                      <div  style="width: 915px;height: 400px;">
+		                            <h2><B>简　　介：</B></h2>
+		                                <%=rs.getX("jj") %>
+		                      </div>
+		                      <div  style="width: 915px;height: 505px;">
+		                              <h2><B>使用说明： </B></h2>
+		                                <%=rs.getX("sysm") %>
+		                      </div>
+		               </div>
+		         </div>
+	       </div>
 </div>
