@@ -28,7 +28,7 @@ Ls ls = dao.ls(args);
 						<td>
 							<table width="390px" cellpadding="0" cellspacing="0" border="0">
 								<tr > 
-									<td width="100"><img src="<%=image %>" width="100px" height="100px"></td>
+									<td width="115px"><img src="<%=image %>" width="100px" height="100px"></td>
 									<td valign="top">
 											<font color="black"align="left"><%=item.get("t0") %></font>
 											<font color="black"><%=item.get("t15") %></font>
