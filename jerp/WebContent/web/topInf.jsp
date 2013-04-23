@@ -30,12 +30,8 @@ Ls ls = dao.ls(args);
 								<tr > 
 									<td><img src="<%=image %>" width="100"></td>
 									<td valign="top">
-										
 											<font color="black"align="left"><%=item.get("t0") %></font>
-										
-										
-											<font color="black"><%=item.get("t1") %></font>
-										
+											<font color="black"><%=item.get("t15") %></font>
 									</td>
 								</tr>
 							</table>
