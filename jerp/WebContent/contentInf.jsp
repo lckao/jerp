@@ -53,13 +53,13 @@
 				<div style="width: 915px; height: 50px;"></div>
 				<div style="width: 915px; height: 400px;">
 					<h2>
-						<B>简 介：</B>
+						<b>简 介：</b>
 					</h2>
 					<%=rs.getX("jj")%>
 				</div>
 				<div style="width: 915px; height: 505px;">
 					<h2>
-						<B>使用说明： </B>
+						<b>使用说明： </b>
 					</h2>
 					<%=rs.getX("sysm")%>
 				</div>
