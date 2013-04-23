@@ -26,16 +26,21 @@ Ls ls = dao.ls(args);
 							}
 						%>
 						<td>
-							<table width="260" cellpadding="0" cellspacing="0" border="1">
+							<table width="260" cellpadding="0" cellspacing="0" border="0">
 								<tr > 
-									<td><img src="<%=image %>" width="100"></td>
+									<td width="100"><img src="<%=image %>" width="100"></td>
 									<td valign="top">
+										
 											<font color="black"align="left"><%=item.get("t0") %></font>
-											<font color="black"><%=item.get("t15") %></font>
+										
+										
+											<font color="black"><%=item.get("t1") %></font>
+										
 									</td>
 								</tr>
 							</table>
 						</td>
+							
 						<%
 							}
 						%>
