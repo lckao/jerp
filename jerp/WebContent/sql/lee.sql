@@ -10,10 +10,25 @@ Target Server Type    : MYSQL
 Target Server Version : 50168
 File Encoding         : 65001
 
-Date: 2013-04-24 09:12:41
+Date: 2013-04-24 15:38:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `cookie`
+-- ----------------------------
+DROP TABLE IF EXISTS `cookie`;
+CREATE TABLE `cookie` (
+  `id` char(10) NOT NULL DEFAULT '',
+  `username` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cookie
+-- ----------------------------
+INSERT INTO `cookie` VALUES ('y0hfw69jrd', 'lckao');
 
 -- ----------------------------
 -- Table structure for `info`
