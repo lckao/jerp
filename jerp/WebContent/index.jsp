@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="net.jdiy.core.*" %>
 <%@ page import="net.jdiy.util.*" %>
-<%@ page import="lee.*" %>
 <%
     //Web环境下用App类来获取JDiy上下文(它是JDiyContext的子类),注意用的是静态方法,在Servlet, Action中都可以这样写.
     App app = App.get();
@@ -13,16 +12,8 @@
     response.addHeader("Cache-Control", "no-cache");
     response.addHeader("Cache-Control", "no-store");
     response.setDateHeader("Expires", 0);
-    
-    String username = app.get("username").trim();
-    String password = app.get("password").trim();
-    
-    password = Sec.MD5Encrypt(password, 32);
-    
-    String filterCheck = "username = '" + username + "' and password = '" + password + "'";
-    Args argsCheck = new Args("vip", filterCheck);
-    Ls lsCheck = dao.ls(argsCheck);
 %>
+<%@ include file="check.jsp" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -37,7 +28,7 @@
 <body leftmargin="0" topmargin="0" >
 <div style="width: 1920px;height: 1080px;">
 	<%
-		if(lsCheck.getRowCount() > 0){
+		if(check){
 	%>
 	<div style="width: 1920px;height: 120px;">
 		<div style="width: 1110px;height: 120px;background-image:url('img/Top.png');float: left;"></div>
