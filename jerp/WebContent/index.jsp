@@ -13,7 +13,6 @@
     response.addHeader("Cache-Control", "no-store");
     response.setDateHeader("Expires", 0);
 %>
-<%@ include file="check.jsp" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,6 +23,7 @@
 <script type="text/javascript" src="js/promptumenu/jquery.promptu-menu.js"></script>
 <script type="text/javascript" src="js/turn.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<%@ include file="check.jsp" %>
 </head>
 <body leftmargin="0" topmargin="0" >
 <div style="width: 1920px;height: 1080px;">
