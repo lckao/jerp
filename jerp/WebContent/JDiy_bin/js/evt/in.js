@@ -10,7 +10,7 @@
 var processPst = 0;
 function showLoadingBar() {
     JSer.url(
-        'ajax.jd?s=processbar'
+        '~.jd?~=processbar@Ajax'
     ).ajax(
         function (d) {
             var da = d.split("|");
@@ -64,8 +64,7 @@ function addExpandFile(fd){
 
 function linkageLoad(field, tb, rid, aid, rootSelectable, depth){
     JSer("#"+field).val(aid);
-    JSer.url("ajax.jd?_="+Math.random()).set({
-        s:'linkageLoad',
+    JSer.url("~.jd?~=linkageLoad@Ajax&_="+Math.random()).set({
         tb:tb,
         rid:rid,
         aid:aid,

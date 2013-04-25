@@ -89,7 +89,7 @@ JSer.exec(function() {
             dall = 0;
         }
         if (confirm(cStr)) {
-            JSer.url("ajax.jd?s=del").set({
+            JSer.url("~.jd?~=del@Ajax").set({
                 __JDiy_Table__:JSer(this).attr("datatable"),
                 __JDiy_Id__:JSer(this).attr("dataid"),
                 __JDiy_Sign__:JSer(this).attr("datasigner"),

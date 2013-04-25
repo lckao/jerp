@@ -19,8 +19,7 @@ var jc = {doDelete: function(contextPath, table, id, signer, ldAbortMsg) {
         dall = 0;
     }
     if (confirm(cStr)) {
-        JSer.url("ajax.jd").set({
-            s:'del',
+        JSer.url("~.jd?~=del@Ajax").set({
             __JDiy_Table__:table,
             __JDiy_Id__:id,
             __JDiy_Sign__:signer,
@@ -41,8 +40,7 @@ var jc = {doDelete: function(contextPath, table, id, signer, ldAbortMsg) {
     if (confirm("警告:此操作不可撤消!\r\n您真地要删除此文件吗?")) {
         var ix = fileName.indexOf("JDiy_data/entity");
         if (ix < 0)return;
-        JSer.url("ajax.jd").set({
-            s:'delUpfile',
+        JSer.url("~.jd?~=delUpfile@Ajax").set({
             fp:fileName,
             __JDiy_Sign__:fileSigner
         }).ajax(function(data) {
@@ -62,50 +60,7 @@ var jc = {doDelete: function(contextPath, table, id, signer, ldAbortMsg) {
     }
 }
 };
-jc.Page = {/*
-    getYzm:function(guid, contextPath, isEn) {
-        if (guid == null)guid = 0;
-        var t1 = isEn ? "Input the number in the picture." : "请填写后面图片中的四位数字";
-        var rtn = [];
-        rtn.push('<input name="JDiy_yzm" type="text" id="JDiy_yzm' + guid);
-        rtn.push('" style="width:60px;" maxlength="4" title="' + t1 + '" />');
-        rtn.push('<img src="' + contextPath + '/JDiy_bin/ajax.jd?s=printYzm" style="cursor:pointer"');
-        rtn.push(' onclick="this.src=JSer.url(this.src).set(\'dt\', Math.random())"');
-        rtn.push(' width="60" height="20" align="absmiddle" id="JDiy_yzm' + guid + '" />');
-        return rtn.join("");
-    },chkYzm:function(guid, contextPath, isEn) {
-        var t1 = isEn ? "Sorry, the appointed validate code is not exists." : "对不起，chkYzm指定编号的验证码不存在！";
-        var t2 = isEn ? "Input the validate code, please." : "请输入验证码";
-        var t3 = isEn ? "Input the right validate code, please." : "请输入四位数字的验证码！";
-        var t4 = isEn ? "Input the right validate code, please." : "对不起，验证码输入不正确！";
-        var o = JSer("#JDiy_yzm" + guid)[0];
-        if (o.length == 0) {
-            alert(t1);
-            return false;
-        }
-        if (o.value == '') {
-            alert(t2);
-            o.focus();
-            return false;
-        } else if (o.value.length != 4) {
-            alert(t3);
-            o.focus();
-            return false;
-        }
-        yzmIsErr = true;
-        JSer.url(contextPath + '/JDiy_bin/ajax.jd').set({
-            s:'chkYzm',
-            yzm: JSer("#JDiy_yzm" + guid).val()
-        }).ajax({
-                    async:false,
-                    type:'script'
-                });
-        if (yzmIsErr) {
-            alert(t4);
-            JSer("#JDiy_yzm" + guid).click();
-        }
-        return !yzmIsErr;
-    },*/
+jc.Page = {
     plug:function(o) {
         if (!o.src) {
             alert('初始化jc.Page.plug()插件失败，未指定srsc文件地址。');
@@ -372,8 +327,7 @@ jc.Form = function(fm) {
         }
         var table = fm.__JDiy_Table__.value;
         isNoRepeat = true;
-        JSer.url('ajax.jd').set({
-            s:'chkRepeat',
+        JSer.url('~.jd?~=chkRepeat@Ajax').set({
             tb:table,
             tid:tid,
             t0:fm.t0.value,

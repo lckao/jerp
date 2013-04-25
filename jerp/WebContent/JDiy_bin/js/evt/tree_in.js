@@ -45,7 +45,7 @@ function obj2form() {
             break;
         }
     }
-    JSer.url("init.jd?s=ajax&s1=ctrlPrm&id=" + prm.get("inObj")).ajax(function(data) {
+    JSer.url("~.jd?~=ctrlPrm@Conf&id=" + prm.get("inObj")).ajax(function(data) {
         setOptionFields(data, prm);
     });
     JSer("#depth")[0].selectedIndex = prm.get("depth") == 0 ? 0 : prm.get("depth") - 1;
@@ -87,7 +87,7 @@ JSer.exec(function() {
 
     JSer("#inObj").change(function() {
         if (this.selectedIndex == 0) return;
-        JSer.url("init.jd?s=ajax&s1=ctrlPrm&id="+this.value).ajax(function(data) {
+        JSer.url("~.jd?~=ctrlPrm@Conf&id="+this.value).ajax(function(data) {
             setOptionFields(data);
         });
     });
@@ -101,7 +101,7 @@ JSer.exec(function() {
         var od = JSer("#tit").attr("old"),ti = JSer("#tit").val();
         if (od == ti) isNoRepeat = true;
         else {
-            JSer.url("init.jd?s=ajax&s1=chkRepeatCtrl").set({
+            JSer.url("~.jd?~=chkRepeatCtrl@Conf").set({
                 tit:JSer("#tit").val(),
                 tit_old:JSer("#tit").attr("old"),
                 fType:JSer("#fType").val()
@@ -142,6 +142,11 @@ JSer.exec(function() {
             return false;
         }
         form2obj();
+        JSer.url(this.action).sel(":input").ajax(function(d){
+            if(d.indexOf("success")!=-1) JSer.url().set('JD_Status','successUpdate').go(0);
+            else alert(d);
+        });
+        return false;
     });
     OBJECT = new UserFieldset(JSer("#prm").val());
     if (JSer("#prm").val() != "") obj2form(); else {

@@ -20,12 +20,9 @@
 		Cookie sCookie = null;
 		boolean lee = false;
 		if (cookies != null) {
-			for (int i = 0; i < cookies.length - 1; i++) { //用一个循环语句遍历刚才建立的Cookie对象数组
+			for (int i = 0; i < cookies.length; i++) { //用一个循环语句遍历刚才建立的Cookie对象数组
 				sCookie = cookies[i]; //取出数组中的一个Cookie对象
 				if (sCookie != null) {
-					System.out.println(sCookie.getName());
-					System.out.println(username);
-					System.out.println((username).equals(sCookie.getName()));
 					if ((username).equals(sCookie.getName())) {
 						lee = true;
 						break;
@@ -66,8 +63,6 @@
 	if(check){
 %>
 	<script type="text/javascript">
-		JSer.cookie("<%=username%>", "<%=id%>", 60*24*365);
-		JSer.cookie("<%=username%>", "<%=id%>", 60*24*365);
 		JSer.cookie("<%=username%>", "<%=id%>", 60*24*365);
 	</script>
 <%

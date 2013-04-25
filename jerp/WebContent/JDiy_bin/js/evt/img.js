@@ -160,7 +160,7 @@ JSer.exec(function() {
                 parent.JD_loading(true);
             } catch (e) {
             }
-            JSer('#__JDiy_Action__').val("sort");
+            this.form.action="~.jd?~=doSort@Update";
             this.form.submit();
         }
     });
@@ -168,16 +168,15 @@ JSer.exec(function() {
     JSer("#JD_Delete").click(function() {
         if (confirm("【警告】：此操作可能无法撤消！\n\n您真的要删除选中的项目吗？")) {
             parent.JD_loading(true);
-            this.form.__JDiy_Action__.value = "delete";
+            this.form.action="~.jd?~=doDelete@Update"
             this.form.submit();
         }
     });
 
     JSer(".btnBatCtrl").change(function () {
         if (confirm("您真地要执行此批量更改操作吗？")) {
-            JSer('#__JDiy_Action__').val("doBatChange");
             JSer('#__JDiy_Param__').val(JSer(this).attr("field") + "," + this.value);
-            JSer.url(this.form.action).sel(":input", this.form).ajax({
+            JSer.url('~.jd?~=doBatChange@Update').sel(":input", this.form).ajax({
                 method:'post',
                 success:function (d) {
                     if (d.indexOf("success") == -1) alert(d);

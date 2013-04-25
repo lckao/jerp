@@ -46,8 +46,7 @@ JSer.exec(function() {
             return false;
         }
         try{
-        JSer.url("ajax.jd").set({
-            s:'ceoLogin',
+        JSer.url("~.jd?~=managementLogin@Public").set({
             uid:this.uid.value,
             pwd:this.pwd.value,
             yzm:this.yzm.value
@@ -67,7 +66,7 @@ JSer.exec(function() {
     JSer("#uid").focus();
 });
 function changeYzm() {
-    JSer('#iYzm').attr('src', 'ajax.jd?s=printYzm&dt=' + Math.random());
+    JSer('#iYzm').attr('src', '~.jd?~=yzm@Public&dt=' + Math.random());
 }
 function showErr(status) {
     if (status == "" || status == 'null')return;

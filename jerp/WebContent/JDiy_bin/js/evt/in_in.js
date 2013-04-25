@@ -193,9 +193,7 @@ function userInterface() {
 
 function showWin(fd, txf) {
     if (fd == null)fd = '';
-    JSer.url().set({
-        s:"JD_Control",
-        p:"ininPop",
+    JSer.url('~.jd?~=input_popup@Conf').set({
         field:fd,
         tb:JSer("#tb").val(),
         txf:txf || 't'
@@ -248,7 +246,7 @@ JSer.exec(function() {
         var od = JSer("#tit").attr("old"),ti = JSer("#tit").val();
         if (od == ti) isNoRepeat = true;
         else {
-            JSer.url("init.jd?s=ajax&s1=chkRepeatCtrl").set({
+            JSer.url("~.jd?~=chkRepeatCtrl@Conf").set({
                 tit:JSer("#tit").val(),
                 tit_old:JSer("#tit").attr("old"),
                 fType:JSer("#fType").val()
@@ -291,6 +289,12 @@ JSer.exec(function() {
             return false;
         }
         JSer("#prm").val(OBJECT.toString());
+
+        JSer.url(this.action).sel(":input").ajax(function(d){
+            if(d.indexOf("success")!=-1) JSer.url().set('JD_Status','successUpdate').go(0);
+            else alert(d);
+        });
+        return false;
     });
 });
 

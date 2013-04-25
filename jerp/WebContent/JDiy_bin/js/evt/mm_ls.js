@@ -10,6 +10,6 @@
 
 JSer.exec(function() {
     JSer("select[@id=chnId]").change(function() {
-        JSer.url("init.jd?s=JD_Control&p=mmList&cid=" + this.value).go("JD_Main");
+        JSer.url("~.jd?~=ls_mm@Conf&cid=" + this.value).go("JD_Main");
     });
 });

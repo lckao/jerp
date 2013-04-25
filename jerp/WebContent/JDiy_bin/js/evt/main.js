@@ -85,7 +85,7 @@ function addEvent() {
 }
 function loadChn() {
     JSer("#zltDiv").html("　　　请稍等,载入中......");
-    JSer.url('ajax.jd?s=getChn').ajax(function(d) {
+    JSer.url('~.jd?~=getChn@Ajax').ajax(function(d) {
             JSer("#zltDiv").html(d);
             addEvent();
             if (absNav)JSer("table[@prefix=" + absNav + "]").click(); else JSer("#tNav").click();
@@ -158,7 +158,7 @@ JSer.exec(function() {
         var obj = this;
         var skin = JSer(this).attr("skin");
         JD_loading(true);
-        JSer.url("ajax.jd").set({s:'setSkin',skin:skin}).ajax(function() {
+        JSer.url("~.jd?~=setSkin@Ajax").set('skin',skin).ajax(function() {
             var css0 = '../JDiy_bin/skins/' + skin + '/css_top.css';
             var css1 = '../JDiy_bin/skins/' + skin + '/css_right.css';
             var css2 = '../JDiy_bin/skins/' + skin + '/css_left.css';
@@ -226,8 +226,8 @@ JSer.exec(function() {
 });
 function logout() {
     JD_loading(false);
-    if (confirm("您真地要退出本系统吗？"))JSer.url("ajax.jd?s=ceoLogout").ajax(function() {
-        document.location.href = "login.jd?s=logout";
+    if (confirm("您真地要退出本系统吗？"))JSer.url("~.jd?~=ceoLogout@Ajax").ajax(function() {
+        document.location.href = "./?s=logout";
     });
 }
 function getDocWidth() {

@@ -37,7 +37,7 @@ function loadNode(tb, id) {
     var flag = JSer("#tb @selected").attr("flag");
     if(flag==0){
         JSer("#rid").val("");
-        JSer("#ridDiv").loadUrl("init.jd?s=ajax&s1=tidOpt&tb=" + tb + "&zlt=" +
+        JSer("#ridDiv").loadUrl("~.jd?~=tidOpt@Conf&tb=" + tb + "&zlt=" +
         (id == null ? "" : id) + "&width=175px", function(){
            if(selectedRid!=null){
                JSer("#tid").val(selectedRid);
@@ -57,7 +57,7 @@ function loadNode(tb, id) {
     }else{
         JSer(".flag0").hide();
         if(!tableStrutsCache[tb]){
-           JSer.url("init.jd?s=ajax&s1=tbStruts&tb="+tb).ajax({
+           JSer.url("~.jd?~=tbStruts@Conf&tb="+tb).ajax({
                 success:function(d){
                     if(d && d.length) tableStrutsCache[tb]=d;
                     else tableStrutsCache[tb]=[];
@@ -307,7 +307,7 @@ JSer.exec(function() {
                 JSer("#syImg").focus();
                 return false;
             }
-            var syExists =JSer.url("init.jd").set({s:"ajax",s1:"checkWatermarkExists",fn:syImg}).ajax({
+            var syExists =JSer.url("~.jd?~=checkWatermarkExists@Conf").set('fn',syImg).ajax({
                 async:false
             }).responseText;
             if (syExists != "success") {

@@ -35,7 +35,7 @@ JSer.exec(function () {
             if (sUrl == null || sUrl == '')return;
             var url = JSer.url(sUrl);
             parent.JD_loading(true);
-            if (sUrl.indexOf("list.jd") == 0) {
+            if (sUrl.indexOf("~.jd?~=@List") == 0) {
                 var mmId = url.get("mmId"), so;
                 if ((so=parent) && (so=so.$jdiycache) && (so=so.sort["sort_" + mmId]))  url.set(so);
             }

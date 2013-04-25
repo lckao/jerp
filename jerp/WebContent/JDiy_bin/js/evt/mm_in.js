@@ -107,7 +107,7 @@ JSer.exec(function() {
 
     JSer("#tb").change(function() {
         if(this.selectedIndex>0 && JSer(this.options[this.selectedIndex]).attr('flag')=='0')
-            JSer("#ridDiv").loadUrl("init.jd?s=ajax&s1=tidOpt&tb=" + this.value + "&zlt=" +
+            JSer("#ridDiv").loadUrl("~.jd?~=tidOpt@Conf&tb=" + this.value + "&zlt=" +
                 JSer(this).attr("zlt"), sys2cur);
         else JSer("#ridDiv").html("&nbsp;");
     }).change();
@@ -180,6 +180,11 @@ JSer.exec(function() {
                 JSer("#sName").focus();
                 return false;
             }
+            JSer.url(this.action).sel(":input").ajax(function(d){
+                if(d.indexOf("success")!=-1) JSer.url().set('JD_Status','successUpdate').go(0);
+                else alert(d);
+            });
+            return false;
         }
     });
 });

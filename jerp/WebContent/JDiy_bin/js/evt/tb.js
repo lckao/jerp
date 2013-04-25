@@ -88,7 +88,7 @@ JSer.exec(function() {
 
         JSer("#btnDiv").hide();
         showErr("请稍等，正在处理...");
-        JSer.url("ajax.jd").set("s","tbSave").sel("#flag, #tb, #tit, #id").ajax({
+        JSer.url("~.jd?~=tbSave@Ajax").sel("#flag, #tb, #tit, #id").ajax({
             success:function(d){
                 if(d.indexOf("notexists")!=-1){
                     showErr("物理数据库中不存在表"+tbo.val()+"，无法附加。");

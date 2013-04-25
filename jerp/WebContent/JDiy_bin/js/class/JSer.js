@@ -1,6 +1,6 @@
 ﻿(function() {
     /********************************************************************
-     **  JSer(v2.7)  -  a lightweight js framework. and GPL license.
+     **  JSer(v2.8)  -  a lightweight js framework. and GPL license.
      **  -----------------------------------------------------
      **  @author     : 子秋(Folier)
      **  @qq         : 39886616
@@ -141,7 +141,7 @@
                     h.insertBefore(script, h.firstChild);
                     h.removeChild(script);
                 }
-            } else if (content.src) JSer.url(content.src).exec({ansyc:false, type:'script'});
+            } else if (content.src) JSer.url(content.src).ajax({ansyc:false, type:'script'});
             else _execScript(content.text || content.textContent || content.innerHTML || content.value || "");
             return content;
         },
@@ -563,7 +563,7 @@
         _taskExec();
         return new Element().newInstance(s, r);
     };
-    JSer.version = 2.7;
+    JSer.version = 2.8;
     JSer.browser = _browser;
 
     var Element = function() {
@@ -661,8 +661,12 @@
             return this.each(function() {
                 var o;
                 if (content && content.nodeType){
-                    o = JSer(content).clone(true)[0];
-                    if(o) _dataCopy(this.appendChild(o));
+                    if(content.nodeName && 'SCRIPT'.eq(content.nodeName))
+                        this.appendChild(_execScript(content));
+                    else{
+                        o = JSer(content).clone(true)[0];
+                        if(o) _dataCopy(this.appendChild(o));
+                    }
                 }
                 else if (content.constructor == String) {
                     o = document.createElement("DIV");
@@ -896,7 +900,7 @@
                 else if ('normal'.eq(time)) time = 100;
                 else if ('slow'.eq(time)) time = 200;
                 else if (isNaN(time)) time = 0;
-                if(_browser.msie) time/=10;
+                if(_browser.msie) time/=20;
                 else if(_browser.opera || _browser.safari) time/=10;
                 else if(_browser.chrome) time/=5;
 
@@ -1008,6 +1012,23 @@
             return r;
         },
 
+        children:function(n){
+            var r=JSer([]);
+            if(isNaN(n)) n=null;
+            for(var i= 0,l=this.length;i<l;i++){
+                var a=[],j= 0;
+                for(var s=this[i].firstChild;s;s= s.nextSibling)
+                    if(s.nodeType==1){
+                        if(n===null || n==j) r.add(s,true);
+                        if(n==j) break;
+                        a[j++]=s;
+                    }
+                if(n<0 && (j=j+n)>0) r.add(a[j],true);
+            }
+            r.endData=this;
+            return r;
+        },
+
         items: function() {
             var a = [];
             for (var i = 0, l=this.length; i < l; i++) a[i]=this[i];
@@ -1026,7 +1047,7 @@
             }
             if (prms) u.set(prms);
             var ok = function(d) {
-                arguments.callee.jso.html(d.replace(/<script(.|\s)*?\/script>/gi, ""));
+                arguments.callee.jso.html(d);
                 if (arguments.callee.fn)fn.call(arguments.callee.jso, d);
             };
             ok.jso = this;
@@ -1121,19 +1142,18 @@
         opacity: function(value) {
             if (value == undefined) {
                 if (!this.length) return 0;
-                var mh;
-                if (_browser.msie) {
+                if (_browser.msie && parseInt(_browser.version)<9) {
+                    var mh;
                     if (mh = (this[0].style.filter || '').match(/alpha\s*\(opacity\s*=(.*)\)/))
                         return mh[1] ? parseFloat(mh[1].trim()) : 100;
                 }
-                return !_browser.msie ? 100 * (this[0].style.opacity || 1) : this[0].style.opacity || 100;
+                return 100 * (this[0].style.opacity || 1);
             } else {
                 if (isNaN(value)) value = 100;
                 return this.each(function() {
                     var opacity = parseInt(value);
-                    if (!_browser.msie) opacity /= 100;
-                    if (_browser.msie) this.style.filter = "alpha(opacity = " + opacity + ")";
-                    else this.style.opacity = opacity;
+                    if(_browser.msie && parseInt(_browser.version)<9)this.style.filter = "alpha(opacity = " + opacity + ")";
+                    else this.style.opacity = opacity/100;
                 });
             }
         },
@@ -1160,8 +1180,12 @@
             return this.each(function() {
                 var o;
                 if (content && content.nodeType){
-                    o = JSer(content).clone(true)[0];
-                    if(o)_dataCopy(this.insertBefore(o, this.firstChild));
+                    if(content.nodeName && 'SCRIPT'.eq(content.nodeName))
+                        this.insertBefore(_execScript(content), this.firstChild);
+                    else{
+                        o = JSer(content).clone(true)[0];
+                        if(o)_dataCopy(this.insertBefore(o, this.firstChild));
+                    }
                 }
                 else if (content.constructor == String) {
                     o = document.createElement("DIV");
@@ -1301,9 +1325,22 @@
 
         show: function(time, bywhat, callback) {//动画待处理: bywhat: w | h | o
             return this.each(function() {
-                var jso =JSer(this);
-                if(jso.data("__stop")) jso.data("__stop").call(jso);
+                var jso =JSer(this), elem= this;
                 if (jso.css('display') != 'none'){
+                    return;
+                }
+
+                if (!time) time = 0;
+                else if ('fast'.eq(time)) time = 200;
+                else if ('normal'.eq(time)) time = 400;
+                else if ('slow'.eq(time)) time = 600;
+                else if (isNaN(time)) time = 0;
+               /* if(_browser.msie) time/=5;
+                else if(_browser.opera || _browser.safari) time/=10;
+                else if(_browser.chrome) time/=5;
+*/
+                if (time <= 0) {
+                    jso.css('display', '');
                     return;
                 }
 
@@ -1314,63 +1351,42 @@
                     overflow: jso.css('overflow')
                 };
 
-                if (!time) time = 0;
-                else if ('fast'.eq(time)) time = 50;
-                else if ('normal'.eq(time)) time = 100;
-                else if ('slow'.eq(time)) time = 200;
-                else if (isNaN(time)) time = 0;
-                if(_browser.msie) time/=25;
-                else if(_browser.opera || _browser.safari) time/=10;
-                else if(_browser.chrome) time/=5;
-
-                if (time <= 0) {
-                    jso.css('display', '');
-                    return;
-                }
-
-                function up() {
-                    leavetime++;
-                    if(leavetime<time){
-                        if(wStep)jso.width(leavetime*wStep);
-                        if(hStep)jso.height(leavetime*hStep);
-                        if(oStep)jso.opacity(leavetime*oStep);
-                        timer=setTimeout(arguments.callee, 0);
-                    }else{
-                        jso.removeData("__stop");
-                        jso.css(oldCss);
-                        if (callback) callback.call(jso[0]);
-                    }
-                }
-
-                var timer=null;
-                function stop(){
-                    if(timer!=null) clearTimeout(timer);
-                    this.css(oldCss);
-                    this.removeData("__stop");
-                }
-
-                jso.css('overflow', 'hidden').css("display", '');
                 if (typeof bywhat == 'function' && !callback) {
                     callback = bywhat;
                     bywhat = 'who';
                 }
                 var leavetime=0,wStep=0,hStep=0,oStep=0;
+                var ww=0,hh=0,oo=0;
                 bywhat = (bywhat || 'who').toLowerCase();
                 if(bywhat.indexOf("w")!=-1){
-                    wStep = jso.width()/time;
+                    wStep = jso.width()*10/time;
                     jso.width(0);
                 }
                 if(bywhat.indexOf("h")!=-1){
-                    hStep = jso.height()/time;
+                    hStep = jso.height()*10/time;
                     jso.height(0);
                 }
 
                 if(bywhat.indexOf("o")!=-1){
-                    oStep = jso.opacity()/time;
+                    oStep = jso.opacity()*10/time;
                     jso.opacity(0);
                 }
-                jso.data("__stop", stop);
-                up();
+                jso.css('overflow', 'hidden').css("display", '');
+                var dofn=function() {
+                    leavetime+=10;
+                    //  if(leavetime<time){
+                    var done=true;
+                    if(wStep&& (ww+=wStep)< oldCss.width){elem.style.width=parseInt(ww)+'px';done=false;}
+                    if(hStep&& (hh+=hStep)< oldCss.height){elem.style.height=parseInt(hh)+'px';done=false;}
+                    if(oStep&& (oo+=oStep)< oldCss.opacity){jso.opacity(oo<100?oo:100);done=false;}
+                    if(leavetime>=time){
+                        clearInterval(timer);
+                        jso.css(oldCss);
+                        if (callback) callback.call(jso[0]);
+                    }
+                };
+
+                var timer=setInterval(dofn,10);
             });
         },
 
@@ -1712,10 +1728,11 @@
             }
         };
 
-        this.loadTo = function(selector) {
+        this.loadTo = function(selector, callback) {
             var o = JSer(selector);
             this.ajax(function(d) {
-                o.html(d.replace(/<script(.|\s)*?\/script>/gi, ""));
+                o.html(d);
+                if(callback && callback instanceof Function) callback.call(o, d);
             });
         };
 
@@ -1737,7 +1754,7 @@
                 complete:null
             };
 
-            var gData=[], pData=[]; //init: 'get' what, or 'post' what.
+            var gData=[], pData=[]; //init: 'getConnection' what, or 'post' what.
             for(var i= 0,l=prma.length;i<l;i++){
                 if(_names.indexOf(":"+prma[i].split("=")[0]+"=:")==-1){
                     pData.push(prma[i]);
@@ -1887,12 +1904,24 @@
         return this;
     };
 
+    JSer.css = function(href){
+        var c = document.createElement("link");
+        c.setAttribute('type', 'text/css');
+        c.setAttribute('rel', 'stylesheet');
+        c.setAttribute('href', href);
+        JSer("head")[0].appendChild(c);
+    };
+
     JSer.exec = function(fn) {
         _taskExec();
-        if (_taskLoaded) fn.call(document, JSer);
-        else _taskAdd(function() {
-            return fn.call(this, JSer);
-        });
+        if(typeof fn =='string'){
+            _execScript({src:fn});
+        }else{
+            if (_taskLoaded) fn.call(document, JSer);
+            else _taskAdd(function() {
+                return fn.call(this, JSer);
+            });
+        }
         return this;
     };
 

@@ -21,5 +21,10 @@ JSer.exec(function() {
             t.focus();
             return false;
         }
+        JSer.url(this.action).sel(":input").ajax(function(d){
+            if(d.indexOf("success")!=-1) JSer.url().set('JD_Status','successUpdate').go(0);
+            else alert(d);
+        });
+        return false;
     });
 });
