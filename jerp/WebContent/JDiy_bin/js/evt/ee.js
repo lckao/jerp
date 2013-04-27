@@ -96,17 +96,17 @@ JSer.exec(function () {
         } catch (e) {
         }
     })
-    
+    ///////////////////////////////客户特殊化/////////////////////////////////////////////
     JSer("#t1").change(function(){
     	JSer("#t2").val(JSer("#t1").val() / 0.08);
     });
     
-    if(JSer("a[@target=_blank]").html() == 'http://jdiy.net' || JSer("a[@target=_blank]").html() == 'Board.net'){
-    	JSer("a[@target=_blank]").html('SAGE');
-    	JSer("a[@target=_blank]").attr("href","http://www.hzsage.com");
-    }
+    JSer("a[@target=_blank]").each(function(i){
+    	JSer(this).html("SAGE").attr("href","http://www.hzsage.com");
+    });
     
-    if(JSer("i").html() == 'JDiy-2.0'){
-    	JSer("i").html('SAGE').parent().removeAttr("zlt_tooltip","onclick");
-    }
+    JSer("strong").each(function(i){
+    	JSer(this).parent().html("Copyright© <strong title='' style='color:#040;cursor:pointer' data-jserguid='3'><a href='http://www.hzsage.com' target='_blank'>SAGE</a></strong>");
+    });
 });
+document.oncontextmenu=function(e){return false;} //屏蔽右键

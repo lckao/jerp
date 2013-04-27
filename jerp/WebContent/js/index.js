@@ -1,5 +1,4 @@
-document.oncontextmenu=new Function("event.returnValue=false;");
-document.onselectstart=new Function("event.returnValue=false;");
+document.oncontextmenu=function(e){return false;} //屏蔽右键
 
 __refreshLeft();
 __refreshRight("");

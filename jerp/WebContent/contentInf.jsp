@@ -26,9 +26,9 @@
 					<div>
 						<b><%=rs.get("t15")%></b>
 					</div>
-					<div>
+					<%-- <div>
 						<b>市场价格：</b><%=rs.get("t1")%><b>元 </b>
-					</div>
+					</div> --%>
 					<div>
 						<b>兑换积分：</b><%=rs.get("t2")%><b>分</b>
 					</div>

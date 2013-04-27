@@ -61,7 +61,7 @@
 	    	 sb2.append("</div><div style=\"width: 5px;height: 155px;float: left;\"></div>");
 	    	 sb2.append("<div style=\"width: 160px;height: 155px;padding-top:50px;color:white;float: left;clear: right;\">");
 	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">" + rslee[i - 1].get("t0") + "</div>");
-	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">市场价格：" + rslee[i - 1].get("t1") + "&nbsp;元</div>");
+	    	 /* sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">市场价格：" + rslee[i - 1].get("t1") + "&nbsp;元</div>"); */
 	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;clear: right;text-align: center;\">兑换积分：" + rslee[i - 1].get("t2") + "&nbsp;分</div>");
 	    	 sb2.append("</div></div></div>");	
 	    	 sb1.append(sb2);
@@ -78,7 +78,7 @@
 	    	 sb2.append("</div><div style=\"width: 5px;height: 155px;float: left;\"></div>");
 	    	 sb2.append("<div style=\"width: 160px;height: 155px;padding-top:50px;color:white;float: left;clear: right;\">");
 	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">" + rslee[i - 1].get("t0") + "</div>");
-	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">市场价格：" + rslee[i - 1].get("t1") + "&nbsp;元</div>");
+	    	 /* sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">市场价格：" + rslee[i - 1].get("t1") + "&nbsp;元</div>"); */
 	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;clear: right;text-align: center;\">兑换积分：" + rslee[i - 1].get("t2") + "&nbsp;分</div>");
 	    	 sb2.append("</div></div></div>");	
 	    	 cols++;
