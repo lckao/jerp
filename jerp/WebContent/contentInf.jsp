@@ -51,18 +51,13 @@
 			</div>
 			<div style="width: 915px; height: 955px; float: left;">
 				<div style="width: 915px; height: 50px;"></div>
-				<div style="width: 915px; height: 400px;">
+				<div style="width: 915px; height:905px;">
 					<h2>
 						<b>简 介：</b>
 					</h2>
 					<%=rs.getX("jj")%>
 				</div>
-				<div style="width: 915px; height: 505px;">
-					<h2>
-						<b>使用说明： </b>
-					</h2>
-					<%=rs.getX("sysm")%>
-				</div>
+				
 			</div>
 		</div>
 	</div>
