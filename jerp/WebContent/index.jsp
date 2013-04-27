@@ -17,6 +17,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>礼品展示</title>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/JSer.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>

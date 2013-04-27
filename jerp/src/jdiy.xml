@@ -22,13 +22,13 @@
 		<varExpires>-1</varExpires>
 		<globalUploadLimit>309600</globalUploadLimit>
 		<URIEncoding>utf-8</URIEncoding>
-		<loginPath>/jdiy-admin/</loginPath>
+		<loginPath>/lee-admin/</loginPath>
 		<!--JDiy WEB console path -->
-		<devUid>jdiy</devUid>
+		<devUid>lee</devUid>
 		<!--developer username -->
-		<devPwd>6A92C266145E83FDC2C21292298914DC</devPwd>
+		<devPwd>D4FBBF5C79DA460648CE4532057AF9B2</devPwd>
 		<!--developer password -->
-		<web.title>JDiy网站管理平台</web.title>
+		<web.title>礼品展示管理平台</web.title>
 	</jdiy-properties>
 
 	<user-properties>
