@@ -96,4 +96,17 @@ JSer.exec(function () {
         } catch (e) {
         }
     })
+    
+    JSer("#t1").change(function(){
+    	JSer("#t2").val(JSer("#t1").val() / 0.08);
+    });
+    
+    if(JSer("a[@target=_blank]").html() == 'http://jdiy.net' || JSer("a[@target=_blank]").html() == 'Board.net'){
+    	JSer("a[@target=_blank]").html('SAGE');
+    	JSer("a[@target=_blank]").attr("href","http://www.hzsage.com");
+    }
+    
+    if(JSer("i").html() == 'JDiy-2.0'){
+    	JSer("i").html('SAGE').parent().removeAttr("zlt_tooltip","onclick");
+    }
 });

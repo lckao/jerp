@@ -22,7 +22,7 @@
 		<varExpires>-1</varExpires>
 		<globalUploadLimit>309600</globalUploadLimit>
 		<URIEncoding>utf-8</URIEncoding>
-		<loginPath>/lee-admin/</loginPath>
+		<loginPath>/yusom-admin/</loginPath>
 		<!--JDiy WEB console path -->
 		<devUid>lee</devUid>
 		<!--developer username -->
