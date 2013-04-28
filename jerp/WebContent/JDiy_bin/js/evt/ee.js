@@ -98,7 +98,9 @@ JSer.exec(function () {
     })
     ///////////////////////////////客户特殊化/////////////////////////////////////////////
     JSer("#t1").change(function(){
-    	JSer("#t2").val(JSer("#t1").val() / 0.08);
+    	if(JSer(this).parent().index(-1).html().indexOf("市场价格") != -1){
+    		JSer("#t2").val(JSer("#t1").val() / 0.08);
+    	}
     });
     
     JSer("a[@target=_blank]").each(function(i){
