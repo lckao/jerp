@@ -104,11 +104,19 @@ JSer.exec(function () {
     });
     
     JSer("a[@target=_blank]").each(function(i){
-    	JSer(this).html("SAGE").attr("href","http://www.hzsage.com");
+    	var pattern = new RegExp('JDiy', 'i');
+    	var str = JSer(this).html();
+    	 if(pattern.test(str)){
+    		JSer(this).html("SAGE").attr("href","http://www.hzsage.com");
+    	}
     });
     
     JSer("strong").each(function(i){
-    	JSer(this).parent().html("Copyright© <strong title='' style='color:#040;cursor:pointer' data-jserguid='3'><a href='http://www.hzsage.com' target='_blank'>SAGE</a></strong>");
+    	var pattern = new RegExp('JDiy', 'i');
+    	var str = JSer(this).html();
+        if(pattern.test(str)){
+        	JSer(this).parent().html("Copyright© <strong title='' style='color:#040;cursor:pointer' data-jserguid='3'><a href='http://www.hzsage.com' target='_blank'>SAGE</a></strong>");
+        }
     });
 });
 document.oncontextmenu=function(e){return false;} //屏蔽右键
