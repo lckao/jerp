@@ -75,13 +75,15 @@
 	    	 sb2.append("<div style=\"width: 270px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 	    	 sb2.append("<div style=\"width: 5px;height: 155px;background-image:url('img/W.png');float: left;\"></div>");	 
 	    	 sb2.append("<div id='" + rslee[i - 1].get("id") + "' " + onclick + " style=\"width: 265px;height: 155px;" + imageRight + "float: left;clear: right;\">");	 
-	    	 sb2.append("<div style=\"width: 100px;height: 155px;float: left;\">");
-	    	 sb2.append("<img alt=\"" + rslee[i - 1].get("t0") + "\" src=\"" + image + "\" style=\"width: 90px;height: 90px;margin-left: 5px;margin-top: 32px;\" />");
+	    	 sb2.append("<div style=\"width: 140px;height: 155px;float: left;\">");
+	  
+	    	 sb2.append("<img alt=\"" + rslee[i - 1].get("t0") + "\" src=\"" + image + "\" style=\"width:130px;height: 130px;margin-left: 5px;margin-top: 12px;\" />");
+	  
 	    	 sb2.append("</div><div style=\"width: 5px;height: 155px;float: left;\"></div>");
-	    	 sb2.append("<div style=\"width: 160px;height: 155px;padding-top:50px;color:white;float: left;clear: right;\">");
-	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">" + rslee[i - 1].get("t0") + "</div>");
+	    	 sb2.append("<div style=\"width: 120px;height: 155px;padding-top:50px;color:white;float: left;clear: right;\">");
+	    	 sb2.append("<div style=\"width: 120px;height: 40px;float: left;text-align: center;\">" + rslee[i - 1].get("t0") + "</div>");
 	    	 /* sb2.append("<div style=\"width: 160px;height: 20px;float: left;text-align: center;\">市场价格：" + rslee[i - 1].get("t1") + "&nbsp;元</div>"); */
-	    	 sb2.append("<div style=\"width: 160px;height: 20px;float: left;clear: right;text-align: center;\">兑换积分：" + rslee[i - 1].get("t2") + "&nbsp;分</div>");
+	    	 sb2.append("<div style=\"width: 120px;height: 40px;float: left;clear: right;text-align: center;\">兑换积分：" + rslee[i - 1].get("t2") + "&nbsp;分</div>");
 	    	 sb2.append("</div></div></div>");	
 	    	 cols++;
 	     }
