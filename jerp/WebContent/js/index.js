@@ -1,5 +1,5 @@
 document.oncontextmenu=function(e){return false;} //屏蔽右键
-
+document.onselectstart=function(){return false;} //屏蔽选中
 __refreshLeft();
 __refreshRight("");
 
