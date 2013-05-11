@@ -51,13 +51,14 @@
 			</div>
 			<div style="width: 915px; height: 955px; float: left;">
 				<div style="width: 915px; height: 50px;"></div>
-				<div style="width: 915px; height:905px;">
+				<div style="width: 915px; height:895px;overflow:hidden">
 					<h2>
 						<b>简 介：</b>
 					</h2>
 					<%=rs.getX("jj")%>
+				  
 				</div>
-				
+				<div style="width: 915px; height: 10px;"></div>
 			</div>
 	</div>
 </div>
