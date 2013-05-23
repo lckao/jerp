@@ -14,7 +14,7 @@ function form2obj() {
     var fd = new UserField();
     fd.set("field", "prm");
     JSer.each(['pageSize','outType', 'addFilter','inObj','cut','dbl','url','urlW','urlH'],function(){
-        fd.set(this,JSer('#'+this).val());
+        fd.set(String(this),JSer('#'+this).val());
     });
     fd.set("imgWH", JSer("#imgW").val() + "," + JSer("#imgH").val());
     var t = [];

@@ -128,7 +128,7 @@ JSer.exec(function() {
         if (this.mge[1].checked && this.mge[3].checked) mgea.push("DelAll");
         fd.set("mge", mgea.join(","));
         JSer.each(['inObj','rownum','depth','fd0','fd1','usrTit'], function(){
-            fd.set(this, JSer('#'+this).val());
+            fd.set(String(this), JSer('#'+this).val());
         });
         OBJECT.set(fd.toString());
         JSer("#prm").val(OBJECT.toString());

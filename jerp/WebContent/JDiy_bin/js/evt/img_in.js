@@ -12,12 +12,12 @@ function form2obj() {
     var fd = new UserField();
     fd.set("field", "prm");
     JSer.each(['imgW', 'imgH', 'inObj', 'img0', 'rownum', 'pagesize', 'dbl'], function () {
-        fd.set(this, JSer('#' + this).val());
+        fd.set(String(this), JSer('#' + this).val());
     });
     var v = fd.get('dbl');
     if (v == "url" || v == "pop") fd.set("url", JSer("#url").val());
     if (v == "pop") JSer.each(['urlW', 'urlH'], function () {
-        fd.set(this, JSer('#' + this).val());
+        fd.set(String(this), JSer('#' + this).val());
     });
     v = [];
     v.push(JSer("#fd0").val());

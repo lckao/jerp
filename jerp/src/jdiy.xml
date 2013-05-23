@@ -16,12 +16,12 @@
 	</databases>
 
 	<jdiy-properties>
-		<keepActive>1</keepActive>
+		<keepActive>10</keepActive>
 		<skin>white</skin>
 		<varKeep>session</varKeep>
 		<varExpires>-1</varExpires>
 		<globalUploadLimit>309600</globalUploadLimit>
-		<URIEncoding>utf-8</URIEncoding>
+		<renameUploadFile>true</renameUploadFile>
 		<loginPath>/yusom-admin/</loginPath>
 		<!--JDiy WEB console path -->
 		<devUid>lee</devUid>

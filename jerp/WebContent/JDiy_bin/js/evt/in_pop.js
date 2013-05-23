@@ -34,6 +34,7 @@ function fillStruts(tb){
 }
 
 function loadNode(tb, id) {
+    if(tb=='')return;
     var flag = JSer("#tb @selected").attr("flag");
     if(flag==0){
         JSer("#rid").val("");
@@ -43,17 +44,12 @@ function loadNode(tb, id) {
                JSer("#tid").val(selectedRid);
                JSer("#rid").val(selectedRid);
            }
+            tableStrutsCache[tb]=[{field:'t0',type:'VARCHAR'},{field:'id',type:'VARCHAR'}];
+            fillStruts(tb);
         });
         JSer(".flag0").show();
         if(JSer("#fType").val()=="linkage")JSer("#tqlx").hide();
 
-        var to =JSer("#listTxt")[0], vo = JSer("#listVal")[0];
-        to.options.length=vo.options.length=0;
-        to.options[0] = new Option("t0　- (VARCHAR)", 't0');
-        vo.options[0] = new Option("id　- (VARCHAR)", 'id');
-        vo.options[1] = new Option("t0　- (VARCHAR)", 't0');
-        if(selectedTxt) JSer("#listTxt").val(selectedTxt);
-        if(selectedVal) JSer("#listVal").val(selectedVal);
     }else{
         JSer(".flag0").hide();
         if(!tableStrutsCache[tb]){

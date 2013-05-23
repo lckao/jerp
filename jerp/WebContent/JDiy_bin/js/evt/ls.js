@@ -230,7 +230,7 @@ JSer.exec(function () {
     });
 
     JSer("#cshbtn").click(function () {
-        JSer.url().rdel("mmId", "sortField", "sortType").go();
+        JSer.url().rdel("mmId", "sortField", "sortType","~", "%7E","%7e").go();
     });
 
 
