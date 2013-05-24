@@ -49,16 +49,18 @@
 					</div>
 				</div>
 			</div>
-			<div style="width: 915px; height: 955px; float: left;">
-				<div style="width: 915px; height: 50px;"></div>
-				<div style="width: 915px; height:895px;overflow:hidden">
+			<div style="width: 15px; height: 955px; float: left;"></div>
+			<div style="width: 885px; height: 955px; float: left;">
+				<div style="width: 885px; height: 50px;"></div>
+				<div style="width: 885px; height:895px;overflow:hidden">
 					<h2>
 						<b>简 介：</b>
 					</h2>
 					<%=rs.getX("jj")%>
 				  
 				</div>
-				<div style="width: 915px; height: 10px;"></div>
+				<div style="width: 885px; height: 10px;"></div>
 			</div>
+			<div style="width: 15px; height: 955px; float: left;"></div>
 	</div>
 </div>
