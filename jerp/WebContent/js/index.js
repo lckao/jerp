@@ -8,14 +8,14 @@ function __refreshLeft() {
 		method : "post",
 		success : function(d) {
 			JSer("#leftDIV").html(d);
-			$('ul.promptu-menu').promptumenu({
+			/*$('ul.promptu-menu').promptumenu({
 				width : 300,
 				height : 960,
 				rows : 1,
 				columns : 1,
 				direction : 'vertical',
 				pages : true
-			});
+			});*/
 		}
 	});
 }
@@ -25,14 +25,14 @@ function __refreshRight(id) {
 		method : "post",
 		success : function(d) {
 			JSer("#rightDIV").html(d);
-			$('ul.promptu-menu2').promptumenu({
+			/*$('ul.promptu-menu2').promptumenu({
 				width : 1620,
 				height : 960,
 				rows : 1,
 				columns : 1,
 				direction : 'vertical',
 				pages : true
-			});
+			});*/
 		}
 	});
 }
