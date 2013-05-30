@@ -17,7 +17,7 @@
 	Rs rslee[] = ls.getItems();
 	StringBuffer sb0 = new StringBuffer();
 	StringBuffer sb1 = new StringBuffer();
-	sb1.append("<div>");
+	sb1.append("<li>");
 	for (int i = 1; i <= jls; i++) {
 		String image = null;
 		if (rslee[i - 1].getFs("pic") != null) {
@@ -28,10 +28,10 @@
 	     if (i % count == 0) {
 	    	 sb1.append("<div style=\"width: 300px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 	    	 sb1.append("<div id=" + rslee[i - 1].get("id") + "  onclick='window.parent.leftFunction(this);' style=\"width: 300px;height: 155px;" + image + "\"></div>");	 
-	         sb1.append("</div>");
+	         sb1.append("</li>");
 	         sb0.append(sb1);
 	         sb1 = new StringBuffer();
-	         sb1.append("<div>");
+	         sb1.append("<li>");
 	         rows=1;
 	     } else {
 	    	 sb1.append("<div style=\"width: 300px;height: 5px;background-image:url('img/W.png');\"></div>");	 
@@ -45,12 +45,11 @@
 			 sb1.append("<div style=\"width: 300px;height: 5px;background-image:url('img/W.png');\"></div>");	 
 	    	 sb1.append("<div style=\"width: 300px;height: 155px;background-image:url('img/BG1.png');\"></div>");	 
 	    }
-		 sb1.append("</div>");
+		 sb1.append("</li>");
 		 sb0.append(sb1);
 		 rows=1;
 	}
 %>
-<%-- <ul class="promptu-menu">
+<ul class="promptu-menu">
 <%=sb0.toString()%>
-</ul> li改为div--%>
-<%=sb0.toString()%>
+</ul>
