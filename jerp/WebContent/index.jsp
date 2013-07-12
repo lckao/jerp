@@ -48,7 +48,9 @@
 		} else {
 	%>
 		对不起！您不是授权用户！
+		<br/>
 	<%
+			out.println(yan);
 		}
 	%>
 </div>
